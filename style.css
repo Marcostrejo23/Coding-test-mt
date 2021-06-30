@@ -1,0 +1,23 @@
+:root{
+    background-color:#e74c3c;
+}
+
+#header{
+text-align: center;
+justify-content: center;
+box-shadow: black 12px 12px 12px 12px;
+border-radius: 22px;
+}
+
+#exam{
+text-align: left;
+box-shadow: black 12px 12px 12px 12px;
+border-radius: 22px;
+
+}
+
+#timer{
+    box-shadow: 20px black;
+    text-align: center;
+    
+}
