@@ -5,9 +5,11 @@ let resultspage = document.getElementById("results");
 var timeEl = document.getElementById("#time");
 function startQuiz(){};
 function showResults(){};
-startButton.addEventListener('click',startQuiz);
-submitButton.addEventListener('click', Results);
+// startButton.addEventListener('click',startQuiz);
+// submitButton.addEventListener('click', Results);
 // let questionNumber= ("question1","question2","question3")
+
+startButton.addEventListener('click', start);
 
 let theQuestions = [{
         Question: "What is preventing default?",
@@ -43,23 +45,25 @@ let theQuestions = [{
 //     for (let i =0;i<theQuestions.length; i++)
 // }
 
-function startButton() {
-    onclick.theQuestions.getElementById(theQuestions);
-    var timeInterval = setInterval(function(){
-        secondsLeft--;
-        timeInterval.textContent = secondsLeft + "seconds left in exam";
+function start() {
+  onclick= document.getElementById("exam").textContent = theQuestions;
+
+//   return.theQuestions;
+   
+//     var timeInterval = setInterval(function(){
+//         secondsLeft--;
+//         timeInterval.textContent = secondsLeft + "seconds left in exam";
         
-        if (secondsLeft=== 0){
-            clearInterval(timeInterval);
-            sendMessage();
-        } 
-    }, 1000);
-}
-function sendMessage(){
-    timeEL.textContent = '';
-    return resultspage();
-}
-startButton();
+//         if (secondsLeft=== 0){
+//             clearInterval(timeInterval);
+//             sendMessage();
+//         } 
+//     }, 999);
+// }
+// function sendMessage(){
+//     timeEL.textContent = '';
+//     return resultspage();
+// }
 
 
     
