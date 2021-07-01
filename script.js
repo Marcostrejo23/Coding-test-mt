@@ -1,8 +1,9 @@
 let examBox = document.getElementById("#exam");
-let startButton = document.getElementById("start");
+let startButton = document.getElementById("start-button");
 let submitButton = document.getElementById("submit");
 let resultspage = document.getElementById("results");
 var timeEl = document.getElementById("#time");
+let answerNum = 0
 function startQuiz(){};
 function showResults(){};
 // startButton.addEventListener('click',startQuiz);
@@ -11,23 +12,22 @@ function showResults(){};
 
 startButton.addEventListener('click', start);
 
-let theQuestions = [{
-        Question: "What is preventing default?",
-        answers: {
-            a: "Banana",
-            b: "If the event does not get explicity handled, its defaul action should not be taken as normal.",
-            c: "List like object, has methods to perform operations"
-        },
-        correctAnswer: "b"
+let theQuestions = [
+    {
+        question: "What is preventing default?",
+        answers:[
+            "Banana",
+            "If the event does not get explicity handled, its defaul action should not be taken as normal.",
+           "List like object, has methods to perform operations"
+        ],
+        
+        correctAnswer: 1
     } ,
     {
         question: "What is an array?",
-        answers: {
-            a: "Stylesheet",
-            b: "Banana",
-            c: "List like object, has methods to perform operations."
-        },
-        correctAnswer: "c",
+        answers: [ "Stylesheet", "Banana", "List like object, has methods to perform operations."
+        ],
+        correctAnswer: 2,
     },
     {
         question: "what is append used for in js?",
@@ -36,17 +36,34 @@ let theQuestions = [{
             b: "insert a set of objects or DOMstring objects.",
             c: "returns an element whose id property matches the specific string.",
                 },
-        correctAnswer: "b",
+        correctAnswer: 1,
     }
 ];
+
 
 // setInterval()
 // startButton.addEventListener("start", startButton){
 //     for (let i =0;i<theQuestions.length; i++)
 // }
 
+//when the user clicks start, 
+TODO://the start button will hide, 
 function start() {
-  onclick= document.getElementById("exam").textContent = theQuestions;
+  onclick= document.getElementById("code-header").textContent = theQuestions[answerNum].question;
+  //question options will appear 
+  //they will be presented with the first question. question i and its three choices
+  // they will be presented with three choices 
+  //each choice will have a button 
+  document.getElementById("answer1").textContent =theQuestions[answerNum].answers[0];
+  document.getElementById("answer2").textContent =theQuestions[answerNum].answers[1];
+  document.getElementById("answer3").textContent =theQuestions[answerNum].answers[2];
+
+
+
+  console.log(theQuestions);
+  console.log(theQuestions[0]);
+  console.log(theQuestions[0].answers[1]);
+
 
 //   return.theQuestions;
    
@@ -63,10 +80,23 @@ function start() {
 // function sendMessage(){
 //     timeEL.textContent = '';
 //     return resultspage();
-// }
-
-
+}
+document.getElementById("answerDiv").addEventListener("click", function(){
+    //user will select their choice 
+    //if they choose wrong, timer will decrease. 
+    var answer = theQuestions[answerNum].correctAnswer
+    console.log(answer)
     
+//if our answer is = to the button we clicked. 
+
+
+    //if they choose correct, timer is unchanged. 
+    //once first question is answered, 
+console.log(event.target)
+console.log(event.target.getAttribute("data-index"));
+
+})
+
 // function createQuiz(){
 //     let output = [];
 //     theQuestions.forEach(
@@ -83,3 +113,10 @@ function start() {
 //         }
 //         output.push(answers );
 //         examBox.innerHTML = output.join('')}
+
+
+
+//presented with second question. 
+//user will select their choice 
+//if they choose wrong, timer will decrease. 
+//if they choose correct, timer is unchanged. 

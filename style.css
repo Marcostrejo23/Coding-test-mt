@@ -17,6 +17,11 @@ border-radius: 22px;
 
 }
 
+/* .answer-button{
+display: none;
+
+} */
+
 #timer{
     box-shadow: 20px black;
     text-align: center;
