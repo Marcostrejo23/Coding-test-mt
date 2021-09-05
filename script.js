@@ -1,3 +1,16 @@
+let headerEL=document.querySelector("#informationHeader");
+let contentArea =document.querySelector("#contentArea");
+let infoBox= document.querySelector("#infoBox");
+let mainEL= document.querySelector("#main");
+let timerEL=document.querySelector("#timer");
+
+let quizLength = 120;
+let quizIndex = 0;
+let quizScored= 0;
+let completedQuiz= false;
+let questions = [question1,question2,question3];
+let highScores= [];
+let quizTimer;
 
 
 let question1={
@@ -28,21 +41,6 @@ let question3={
     answer2: "returns an element whose id property matches the specific string"
 }
 
-
-let headerEL=document.querySelector("#informationHeader");
-let contentArea =document.querySelector("#contentArea");
-let infoBox= document.querySelector("#infoBox");
-let mainEL= document.querySelector("#main");
-let timerEL=document.querySelector("#timer");
-
-let quizLength = 120;
-let quizIndex = 0;
-let quizScored= 0;
-let completedQuiz= false;
-let questions = [question1,question2,question3];
-let highScores= [];
-let quizTimer;
-
 function init(){
     let renderScores = JSON.parse(localStorage.getItem("scorecard"));
     if(renderScores !== null){
@@ -66,6 +64,15 @@ function renderMainPage(){
     contentArea.append(pTag);
     contentArea.append(quizButton);
 }
+
+
+
+
+
+
+
+
+
 
 // let examBox = document.getElementById("#exam");
 // let startButton = document.getElementById("start-button");
