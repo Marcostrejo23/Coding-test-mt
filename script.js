@@ -65,7 +65,21 @@ function renderMainPage(){
     contentArea.append(quizButton);
 }
 
-
+function createQuestions(){
+    let currentQuestion=questions[quizIndex];
+    mainEL.style.setProperty("--qAlignment", "flex-start");
+    headerEL.textContent=currentQuestion.question;
+    contentArea.textContent="";
+    
+    for (let i = 0; i < currentQuestion.length; i++) {
+        let answerButton = document.createElement("button");
+        answerButton.textContent=`${i}. ${currentQuestion[`answer${i}`]}`;
+        answerButton.setAttribute("id", i);
+        answerButton.addEventListener("click", answerSelected);
+        contentArea.append(answerButton);
+        
+    }
+}
 
 
 
