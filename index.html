@@ -5,37 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Quiz</title>
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="./style.css"/>
 </head>
-<header>
-    <h1 id= header>Code Test</h1>
-</header>
-
-
-<div id="exam" style="text-align: center;">
-    <h3 id="code-header">Please answer the following questions</h3>
-<button id="start-button">start</button>
-<br>
-<div id="answerDiv">
-    <button id="answer1" data-index="0" class="answer-button"></button>
-    <button id="answer2" data-index="1" class="answer-button"></button>
-    <button id="answer3" data-index="2" class="answer-button"></button>
-</div>
-<!-- <button id="submit-button">submit</button> -->
-
-</div>
-<div id= "timer">
-<h4>Timer</h4>
-<h5>scoreboard</h5>
-
-</div>
-
-
-
-
-
-<div id="Results">Results</div>
-    <script src="script.js"></script>
+<body>
+    <header>
+        <a onclick="listHighScores()">Would you like to see the high scores?</a><span id="time"></span>
+    </header>
+    <main>
+        <h1 id= "informationHeader"></h1>
+        <div class="content-container" id="content-area">
+        </div>
+        <div id="infoBox">
+        </div>
+    </main>
+    <script src="./script.js"></script>
 </body>
 </html>
