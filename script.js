@@ -77,10 +77,40 @@ function createQuestions(){
         answerButton.setAttribute("id", i);
         answerButton.addEventListener("click", answerSelected);
         contentArea.append(answerButton);
-        
     }
 }
 
+function EnterInitials(){
+    let containerDiv= document.createElement("div");
+    let initials= document.createElement("input");
+    let submitB= document.createElement("button");
+    let scoreText= document.createElement("p");
+    mainEL.style.setProperty("--content-width", "40vw");
+    contentArea.textContent="";
+    headerEL.textContent="Please write your initials here"
+    scoreText.textContent= `Your score was ${quizScore}`;
+    initials.setAttribute("type","text");
+    initials.setAttribute("id","initialsInput");
+    initials.setAttribute("placeholder","Enter your initials");
+    submitB.textContent= "Submit";
+    submitB.setAttribute=("id","submit-button");
+    contentArea.append(scoreText);
+    containerDiv.append(initials);
+
+        submitB.addEventListener("click",function(event){
+            event.preventDefault();
+            if(initials.value !== ""){
+              highScores.push(`${quizScored} - ${initials.value}`);
+              highScores.sort(sortScores);
+              localStorage.setItem("scoreboard", JSON.stringify(highScores));
+              createHighScores()  
+            }else{
+                alert('Enter your initials')
+            }
+        });
+        containerDiv.append(submitB);
+        contentArea.append(containerDiv);
+}
 
 
 
