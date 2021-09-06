@@ -6,7 +6,7 @@ let timerEL=document.querySelector("#timer");
 
 let quizLength = 120;
 let quizIndex = 0;
-let quizScored= 0;
+let quizScore= 0;
 let completedQuiz= false;
 let questions = [question1,question2,question3];
 let highScores= [];
@@ -14,7 +14,7 @@ let quizTimer;
 
 
 let question1={
-    questions: "What is preventing default?",
+    question: "What is preventing default?",
     numberedAnswers= 3,
     correctA="1",
 
@@ -23,7 +23,7 @@ let question1={
     answer2: "List like object, has methods to perform operations"
 }
 let question2={
-    questions: "What is an array?",
+    question: "What is an array?",
     numberedAnswers= 3,
     correctA="1",
 
@@ -32,7 +32,7 @@ let question2={
     answer2: "has methods to perform operations"
 }
 let question3={
-    questions: "What is append used for?",
+    question: "What is append used for?",
     numberedAnswers= 3,
     correctA="1",
 
@@ -70,7 +70,6 @@ function createQuestions(){
     mainEL.style.setProperty("--qAlignment", "flex-start");
     headerEL.textContent=currentQuestion.question;
     contentArea.textContent="";
-    
     for (let i = 0; i < currentQuestion.length; i++) {
         let answerButton = document.createElement("button");
         answerButton.textContent=`${i}. ${currentQuestion[`answer${i}`]}`;
@@ -93,16 +92,16 @@ function EnterInitials(){
     initials.setAttribute("id","initialsInput");
     initials.setAttribute("placeholder","Enter your initials");
     submitB.textContent= "Submit";
-    submitB.setAttribute=("id","submit-button");
+    submitB.setAttribute=("id","submitButton");
     contentArea.append(scoreText);
     containerDiv.append(initials);
 
         submitB.addEventListener("click",function(event){
             event.preventDefault();
             if(initials.value !== ""){
-              highScores.push(`${quizScored} - ${initials.value}`);
+              highScores.push(`${quizScore} - ${initials.value}`);
               highScores.sort(sortScores);
-              localStorage.setItem("scoreboard", JSON.stringify(highScores));
+              localStorage.setItem("scorecard", JSON.stringify(highScores));
               createHighScores()  
             }else{
                 alert('Enter your initials')
@@ -118,16 +117,16 @@ function createHighScores(){
     contentArea.textContent="";
     infoBox.textContent="";
     headerEL.textContent="High scores!";
-    let scoreboard= document.createElement("ol");
+    let scorecard= document.createElement("ol");
     for (let score of highScores){
         let listEL= document.createElement('li');
         listEL.textContent= score;
-        scoreboard.append(listEL);
+        scorecard.append(listEL);
     }
-    contentArea.append(scoreboard);
+    contentArea.append(scorecard);
     backButton.textContent="return";
     clearButton.textContent="clear scores";
-    backButton.addEventListener("click",resetQuiz);
+    backButton.addEventListener("click",quizReset);
     clearButton.addEventListener("click", clearScores);
     infoBox.append(backButton);
     infoBox.append(clearButton);     
@@ -147,7 +146,7 @@ function selectedAnswer(event){
         let statusDuration = 1;
         if(elId === questions[quizIndex].correctA){
             infoBox.textContent=`You're right!`;
-            quizScored += 5;
+            quizScore += 5;
         } else{
             infoBox.textContent=`wrong!`;
         }
@@ -172,12 +171,12 @@ function selectedAnswer(event){
      let quizLength = 120;
      let quizIndex = 0;
      let quizScore= 0;
-     quizCompleted= false;
+     completedQuiz= false;
      renderMainPage();
  }
  function clearScores(){
      quizHighScores=[];
-     localStorage.removeItem("scoreboard");
+     localStorage.removeItem("scorecard");
      renderMainPage();
  }
 
@@ -191,78 +190,21 @@ function selectedAnswer(event){
          clearInterval(quizTimer);
      }
  }
-// let examBox = document.getElementById("#exam");
-// let startButton = document.getElementById("start-button");
-// let submitButton = document.getElementById("submit");
-// let resultsPage = document.getElementById("results");
-// var timeEl = document.getElementById("#time");
-// let answerNum = 0
-// function startQuiz(){};
-// function showResults(){};
+ 
+ function scoreSorting(item1,item2){
+     let number1= 0;
+     let number2= 0;
+     item1= item1.split("-"[0].trim())
+     item2= item2.split("-"[0].trim())
+    number1= Number(item1);
+    number2= Number(item2);
+    if(number1> number2){
+        return -1;
+    }
+    if(number1<number2){
+        return 1;
+    }
+    return 0;
+ }
 
-// startButton.addEventListener('click', start);
-
-// var theQuestions = [
-//     {
-//         question: "What is preventing default?",
-//         answers:[
-//             "Banana",
-//             "If the event does not get explicity handled, its default action should not be taken as normal.",
-//            "List like object, has methods to perform operations"
-//         ],
-        
-//         correctAnswer: 1
-//     } ,
-//     {
-//         question: "What is an array?",
-//         answers: [ "Stylesheet", "Banana", "List like object, has methods to perform operations."
-//         ],
-//         correctAnswer: 2,
-//     },
-//     {
-//         question: "what is append used for in js?",
-//         answers:{
-//             a: "banana",
-//             b: "insert a set of objects or DOMstring objects.",
-//             c: "returns an element whose id property matches the specific string.",
-//                 },
-//         correctAnswer: 1,
-//     }
-// ];
-
-
-// //when the user clicks start, 
-// TODO://the start button will hide, 
-// function start() {
-//   onclick= document.getElementById("code-header").textContent = theQuestions[answerNum].question;
-//   //question options will appear 
-//   //they will be presented with the first question. question i and its three choices
-//   // they will be presented with three choices 
-//   //each choice will have a button 
-//   document.getElementById("answer1").textContent =theQuestions[answerNum].answers[0];
-//   document.getElementById("answer2").textContent =theQuestions[answerNum].answers[1];
-//   document.getElementById("answer3").textContent =theQuestions[answerNum].answers[2];
-
-
-
-//   console.log(theQuestions);
-//   console.log(theQuestions[0]);
-//   console.log(theQuestions[0].answers[1]);
-
-// }
-// document.getElementById("answerDiv").addEventListener("click", function(){
-//     //user will select their choice 
-//     //if they choose wrong, timer will decrease. 
-//     var answer = theQuestions[answerNum].correctAnswer
-//     console.log(answer)
-    
-// //if our answer is = to the button we clicked. 
-
-
-//     //if they choose correct, timer is unchanged. 
-//     //once first question is answered, 
-// console.log(event.target)
-// console.log(event.target.getAttribute("data-index"));
-
-// })
-// cc
+ init();
