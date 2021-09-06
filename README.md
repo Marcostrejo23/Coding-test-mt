@@ -1,3 +1,4 @@
+
 # Coding-test-mt
 
 Deployed at: 
@@ -11,6 +12,15 @@ installation:
 Fork the repo and run it locally. 
 
 Screenshots:
+![Screen Shot 2021-09-06 at 2 07 52 PM](https://user-images.githubusercontent.com/85652700/132260630-5efc50a1-980d-4651-8d1c-129bb59e6d9e.png)
+
+![Screen Shot 2021-09-06 at 2 09 37 PM](https://user-images.githubusercontent.com/85652700/132260692-43daf4a0-c565-4929-a462-17833bbd2665.png)
+
+![Screen Shot 2021-09-06 at 2 09 45 PM](https://user-images.githubusercontent.com/85652700/132260694-b6af7790-944c-4932-b4b6-78163244b78c.png)
+
+![Screen Shot 2021-09-06 at 2 11 31 PM](https://user-images.githubusercontent.com/85652700/132260774-ea574234-6000-4edf-be98-3394d09b7088.png)
+
+![Screen Shot 2021-09-06 at 2 11 37 PM](https://user-images.githubusercontent.com/85652700/132260780-8dce3196-bfb9-4c64-9925-77cf9c692909.png)
 
 
 License:
