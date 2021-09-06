@@ -22,6 +22,30 @@ let question3={
     answer1: "insert a set of objects or DOMstring objects",
     answer2: "returns an element whose id property matches the specific string"
 }
+let question4={
+    question: "What is great about React?",
+    numberedAnswers: 3,
+    correctA:"1",
+    answer0: "banana",
+    answer1: "its great for modularity and re-usable code",
+    answer2: "Orange"
+}
+let question5={
+    question: "Who make the best team for instructors?",
+    numberedAnswers: 3,
+    correctA:"1",
+    answer0: "joe/louis",
+    answer1: "Joe/Louis",
+    answer2: "Joe/Louis"
+}
+let question6={
+    question: "What is great about MongoDB?",
+    numberedAnswers: 3,
+    correctA:"2",
+    answer0: "banana",
+    answer1: "its great for modularity and re-usable code",
+    answer2: "The document data model is a powerful way to store and retrieve data that allows developers to move fast, per the mongodb website."
+}
 
 let headerEL=document.querySelector("#informationHeader");
 let contentArea =document.querySelector("#contentArea");
@@ -32,7 +56,7 @@ let quizLength = 120;
 let quizIndex = 0;
 let quizScore= 0;
 let quizCompleted= false;
-let questions = [question1,question2,question3];
+let questions = [question1,question2,question3,question4];
 let highScores= [];
 let quizTimer;
 
@@ -65,11 +89,11 @@ function createQuestions(){
     mainEL.style.setProperty("--alignment", "flex-start");
     headerEL.textContent=currentQuestion.question;
     contentArea.textContent="";
-    for (let i = 0; i < currentQuestion.length; i++) {
+    for (let i = 0; i < currentQuestion.numberedAnswers; i++) {
         let answerButton = document.createElement("button");
         answerButton.textContent=`${i}. ${currentQuestion[`answer${i}`]}`;
         answerButton.setAttribute("id", i);
-        answerButton.addEventListener("click", answerSelected);
+        answerButton.addEventListener("click", selectedAnswer);
         contentArea.append(answerButton);
     }
 }
@@ -141,7 +165,7 @@ function selectedAnswer(event){
         } else{
             infoBox.textContent=`wrong!`;
         }
-        infoBox.setProperty("--status-border-width","3px");
+        infoBox.style.setProperty("--status-border-width","3px");
         let clearStatus= setInterval(function(){
             statusDuration--;
             if(statusDuration <= 0){
