@@ -180,6 +180,17 @@ function selectedAnswer(event){
      localStorage.removeItem("scoreboard");
      renderMainPage();
  }
+
+ function quizProctor(){
+     quizDuration--;
+     timerEL.textContent = `time ${quizDuration}`
+     if(quizDuration <=0 || quizCompleted){
+         contentArea.textContent = "thank you for playing";
+         timerEL.textContent = "";
+         renderMainPage();
+         clearInterval(quizTimer);
+     }
+ }
 // let examBox = document.getElementById("#exam");
 // let startButton = document.getElementById("start-button");
 // let submitButton = document.getElementById("submit");
