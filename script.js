@@ -94,7 +94,7 @@ function EnterInitials(){
             event.preventDefault();
             if(initials.value !== ""){
               highScores.push(`${quizScore} - ${initials.value}`);
-              highScores.sort(sortScores);
+              highScores.sort(scoreSorting);
               localStorage.setItem("scorecard", JSON.stringify(highScores));
               createHighScores()  
             }else{
