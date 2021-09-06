@@ -168,7 +168,14 @@ function selectedAnswer(event){
         }
     }
 }
+ function quizReset(){
+     let quizLength = 120;
+     let quizIndex = 0;
+     let quizScore= 0;
+     quizCompleted= false;
+     renderMainPage();
 
+ }
 // let examBox = document.getElementById("#exam");
 // let startButton = document.getElementById("start-button");
 // let submitButton = document.getElementById("submit");
