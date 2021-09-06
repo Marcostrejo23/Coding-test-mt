@@ -112,8 +112,27 @@ function EnterInitials(){
         contentArea.append(containerDiv);
 }
 
+function createHighScores(){
+    let backButton= document.createElement("button");
+    let clearButton=document.createElement("button");
+    contentArea.textContent="";
+    infoBox.textContent="";
+    headerEL.textContent="High scores!";
+    let scoreboard= document.createElement("ol");
+    for (let score of highScores){
+        let listEL= document.createElement('li');
+        listEL.textContent= score;
+        scoreboard.append(listEL);
+    }
+    contentArea.append(scoreboard);
+    backButton.textContent="return";
+    clearButton.textContent="clear scores";
+    backButton.addEventListener("click",resetQuiz);
+    clearButton.addEventListener("click", clearScores);
+    infoBox.append(backButton);
+    infoBox.append(clearButton);     
 
-
+}
 
 
 
