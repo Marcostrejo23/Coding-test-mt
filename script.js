@@ -1,6 +1,3 @@
-
-
-
 let question1= {
     question: "What is preventing default?",
     numberedAnswers:3,
@@ -31,7 +28,6 @@ let contentArea =document.querySelector("#contentArea");
 let infoBox= document.querySelector("#infoBox");
 let mainEL= document.querySelector("#main");
 let timerEL=document.querySelector("#timer");
-
 let quizLength = 120;
 let quizIndex = 0;
 let quizScore= 0;
