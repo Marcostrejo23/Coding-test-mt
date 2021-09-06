@@ -35,7 +35,7 @@ let timerEL=document.querySelector("#timer");
 let quizLength = 120;
 let quizIndex = 0;
 let quizScore= 0;
-let completedQuiz= false;
+let quizCompleted= false;
 let questions = [question1,question2,question3];
 let highScores= [];
 let quizTimer;
@@ -51,7 +51,7 @@ function init(){
 function renderMainPage(){
     let pTag = document.createElement("p");
     let quizButton= document.createElement("button");
-    mainEL.style.setProperty("--qAlignment","center");
+    mainEL.style.setProperty("--alignment","center");
     mainEL.style.setProperty("--content-width","70vw");
     headerEL.textContent= "Take the coding quiz";
     contentArea.textContent="";
@@ -66,7 +66,7 @@ function renderMainPage(){
 
 function createQuestions(){
     let currentQuestion=questions[quizIndex];
-    mainEL.style.setProperty("--qAlignment", "flex-start");
+    mainEL.style.setProperty("--alignment", "flex-start");
     headerEL.textContent=currentQuestion.question;
     contentArea.textContent="";
     for (let i = 0; i < currentQuestion.length; i++) {
@@ -94,7 +94,6 @@ function EnterInitials(){
     submitB.setAttribute=("id","submitButton");
     contentArea.append(scoreText);
     containerDiv.append(initials);
-
         submitB.addEventListener("click",function(event){
             event.preventDefault();
             if(initials.value !== ""){
@@ -109,7 +108,6 @@ function EnterInitials(){
         containerDiv.append(submitB);
         contentArea.append(containerDiv);
 }
-
 function createHighScores(){
     let backButton= document.createElement("button");
     let clearButton=document.createElement("button");
@@ -130,13 +128,11 @@ function createHighScores(){
     infoBox.append(backButton);
     infoBox.append(clearButton);     
 }
-
 function startQuiz(event){
     event.preventDefault();
     createQuestions();
     quizTimer=setInterval(quizProctor,1000);
 }
-
 function selectedAnswer(event){
     event.preventDefault();
     let target= event.target;
@@ -178,7 +174,6 @@ function selectedAnswer(event){
      localStorage.removeItem("scorecard");
      createHighScores();
  }
-
  function quizProctor(){
      quizLength--;
      timerEL.textContent = `Time: ${quizLength}`
@@ -189,7 +184,6 @@ function selectedAnswer(event){
          clearInterval(quizTimer);
      }
  }
- 
  function scoreSorting(item1,item2){
      let number1= 0;
      let number2= 0;
@@ -205,5 +199,4 @@ function selectedAnswer(event){
     }
     return 0;
  }
-
  init();

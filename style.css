@@ -1,100 +1,76 @@
 :root{
-    --qAlignment: center;
+    --alignment: center;
     --startBtn-display: inline;
-    --content-width: 50vw;
+    --content-width: 70vw;
     --status-border-width: 0px;
 }
-
-/* Styling for the entire page */
 *{
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
-
-/* Background color and text color styling */
 body{
     background: #6ab04c;
     color: #f9ca24;
 }
 
-/* Styling for the header at the top of the page */
 header{
     display: flex;
     justify-content: space-between;
-    height: 7vh;
-    padding: 10px;
+    height: 12vh;
+    padding: 12px;
 }
-
-/* Styling for the main tag on the page */
 main{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: var(--qAlignment);
-    height: 93vh;
+    align-items: var(--alignment);
+    height: 90vh;
     width: var(--content-width);
     margin: 0 auto;
-    padding-top: 10vh;
+    padding-top: 12vh;
 }
-
-/* General styling for every h1 element */
 h1{
-    margin: 5px 0px;
+    margin: 6px 0px;
 }
-
-/* General styling for all buttons */
 button{
-    padding: 2px;
-    margin: 2px 0;
-    font-size: 16px;
+    padding: 4px;
+    margin: 4px 0;
+    font-size: 18px;
     background-color: #686de0;
     color: #dff9fb;
-    border-radius: 5px;
-    border: #dff9fb solid 1px;
+    border-radius: 6px;
+    border: #dff9fb solid 3px;
 }
-
-/* Sets the width of the scoreboard to be 100% */
 ol{
     width:100%;
 }
-
 li:nth-child(odd){
     background-color: #7ed6df;
 }
-
-/* Styles the content-area section */
 .content-container{
     display: flex;
     flex-direction: column;
-    align-items: var(--qAlignment);
     width:100%;
+    align-items: var(--alignment);
 }
-
-/* Styles the start quiz button on the landing page */
 #quiz-button{
-    padding: 5px;
-    margin: 10px;
+    padding: 6px;
+    margin: 12px;
 }
-
-/* Styling for the submit button on the initials page */
 #submitButton{
-    margin: 0px 10px;
+    margin: 0px 12px;
 }
-
-/* Styling for the initials input text box */
 #initialsInput{
     display: var(--startBtn-display);
-    margin: 10px 0px;
-    font-size: 16px;
+    margin: 12px 0px;
+    font-size: 18px;
 }
-
-/* Styling for the text block that relays if the answer is correct or incorrect */
 #infoBox{
     display:flex;
     justify-content: space-between;
-    margin-top: 5px;
+    margin-top: 6px;
     border-top: var(--status-border-width) solid #c9a9e4;
     color: #c9a9e4;
     width: 50%;
