@@ -177,7 +177,7 @@ function selectedAnswer(event){
  function clearScores(){
      quizHighScores=[];
      localStorage.removeItem("scorecard");
-     renderMainPage();
+     createHighScores();
  }
 
  function quizProctor(){
@@ -186,7 +186,7 @@ function selectedAnswer(event){
      if(quizDuration <=0 || quizCompleted){
          contentArea.textContent = "thank you for playing";
          timerEL.textContent = "";
-         renderMainPage();
+         EnterInitials();
          clearInterval(quizTimer);
      }
  }
