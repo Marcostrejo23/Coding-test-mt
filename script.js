@@ -136,9 +136,38 @@ function createHighScores(){
 function startQuiz(event){
     event.preventDefault();
     createQuestions();
-    quizTimer=setInterval(quizMonitor,1000);
+    quizTimer=setInterval(quizProctor,1000);
 }
 
+function selectedAnswer(event){
+    event.preventDefault();
+    let target= event.target;
+    if(target.matches("button")){
+        let elId= target.getAttribute("id");
+        let statusDuration = 1;
+        if(elId === questions[quizIndex].correctA){
+            infoBox.textContent=`You're right!`;
+            quizScored += 5;
+        } else{
+            infoBox.textContent=`wrong!`;
+        }
+        infoBox.setProperty("--status-border-width","3px");
+        let clearStatus= setInterval(function(){
+            statusDuration--;
+            if(statusDuration <= 0){
+                infoBox.textContent="";
+                infoBox.style.setProperty("--status-border-width","0px");
+                clearInterval(clearStatus)
+            }
+        },500);
+        if(quizIndex + 1 < questions.length){
+            quizIndex++;
+            createQuestions();
+        } else{
+            quizCompleted= true;
+        }
+    }
+}
 
 // let examBox = document.getElementById("#exam");
 // let startButton = document.getElementById("start-button");
