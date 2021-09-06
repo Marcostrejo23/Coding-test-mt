@@ -174,7 +174,11 @@ function selectedAnswer(event){
      let quizScore= 0;
      quizCompleted= false;
      renderMainPage();
-
+ }
+ function clearScores(){
+     quizHighScores=[];
+     localStorage.removeItem("scoreboard");
+     renderMainPage();
  }
 // let examBox = document.getElementById("#exam");
 // let startButton = document.getElementById("start-button");
