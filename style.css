@@ -60,10 +60,8 @@ ol{
     width:100%;
 }
 
-/* When the highscores load, starting with the first element 
-the background color will alternate */
 li:nth-child(odd){
-    background-color: #32328b;
+    background-color: #7ed6df;
 }
 
 /* Styles the content-area section */
@@ -85,7 +83,7 @@ li:nth-child(odd){
     margin: 0px 10px;
 }
 
-/* Styling for the initials input textbox */
+/* Styling for the initials input text box */
 #initialsInput{
     display: var(--startBtn-display);
     margin: 10px 0px;

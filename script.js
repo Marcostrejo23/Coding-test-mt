@@ -58,8 +58,8 @@ function renderMainPage(){
     infoBox.textContent="";
     pTag.textContent="Answer all the questions in the allotted time";
     quizButton.textContent="Let's go!";
-    quizButton.setAttribute("id","quizButton");
-    quizButton.addEventListener("click", "startQuiz");
+    quizButton.setAttribute("id","quizBtn");
+    quizButton.addEventListener("click","startQuiz");
     contentArea.append(pTag);
     contentArea.append(quizButton);
 }
