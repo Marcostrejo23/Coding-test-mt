@@ -13,11 +13,10 @@ let highScores= [];
 let quizTimer;
 
 
-let question1={
+let question1= {
     question: "What is preventing default?",
     numberedAnswers= 3,
     correctA="1",
-
     answer0: "Banana",
     answer1: "If the event does not get explicity handled, its default action should not be taken as normal.",
     answer2: "List like object, has methods to perform operations"
@@ -26,7 +25,6 @@ let question2={
     question: "What is an array?",
     numberedAnswers=3,
     correctA="1",
-
     answer0: "Stylesheet",
     answer1: "List like object",
     answer2: "has methods to perform operations"
@@ -35,7 +33,6 @@ let question3={
     question: "What is append used for?",
     numberedAnswers= 3,
     correctA="1",
-
     answer0: "banana",
     answer1: "insert a set of objects or DOMstring objects",
     answer2: "returns an element whose id property matches the specific string"
