@@ -59,7 +59,7 @@ function renderMainPage(){
     pTag.textContent="Answer all the questions in the allotted time";
     quizButton.textContent="Let's go!";
     quizButton.setAttribute("id","quizBtn");
-    quizButton.addEventListener("click","startQuiz");
+    quizButton.addEventListener("click",startQuiz);
     contentArea.append(pTag);
     contentArea.append(quizButton);
 }
@@ -180,9 +180,9 @@ function selectedAnswer(event){
  }
 
  function quizProctor(){
-     quizDuration--;
-     timerEL.textContent = `time ${quizDuration}`
-     if(quizDuration <=0 || quizCompleted){
+     quizLength--;
+     timerEL.textContent = `Time: ${quizLength}`
+     if(quizLength <=0 || quizCompleted){
          contentArea.textContent = "thank you for playing";
          timerEL.textContent = "";
          EnterInitials();
