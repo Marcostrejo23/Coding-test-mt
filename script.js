@@ -131,10 +131,13 @@ function createHighScores(){
     clearButton.addEventListener("click", clearScores);
     infoBox.append(backButton);
     infoBox.append(clearButton);     
-
 }
 
-
+function startQuiz(event){
+    event.preventDefault();
+    createQuestions();
+    quizTimer=setInterval(quizMonitor,1000);
+}
 
 
 // let examBox = document.getElementById("#exam");
