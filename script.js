@@ -15,7 +15,7 @@ let quizTimer;
 
 let question1={
     question: "What is preventing default?",
-    numberedAnswers= "3",
+    numberedAnswers= 3,
     correctA="1",
 
     answer0: "Banana",
@@ -24,7 +24,7 @@ let question1={
 }
 let question2={
     question: "What is an array?",
-    numberedAnswers= "3",
+    numberedAnswers=3,
     correctA="1",
 
     answer0: "Stylesheet",
@@ -33,7 +33,7 @@ let question2={
 }
 let question3={
     question: "What is append used for?",
-    numberedAnswers= "3",
+    numberedAnswers= 3,
     correctA="1",
 
     answer0: "banana",
