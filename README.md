@@ -25,4 +25,4 @@ Screenshots:
 
 License:
 
-this application uses an MIT license. 
+This application uses an MIT license. 
