@@ -30,5 +30,12 @@ https://github.com/Marcostrejo23
 
 ![Screen Shot 2021-09-06 at 2 11 37 PM](https://user-images.githubusercontent.com/85652700/132260780-8dce3196-bfb9-4c64-9925-77cf9c692909.png)
 
+<<<<<<< HEAD
 ## License
 this application uses an MIT license. 
+=======
+
+License:
+
+This application uses an MIT license. 
+>>>>>>> dd84485d0119009262216b90296789d882428df7
